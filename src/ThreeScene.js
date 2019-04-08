@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import * as TrackballControls from 'three-trackballcontrols';
 import { toCSG, fromCSG } from 'three-2-csg';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { noConflict } from 'q';
 import math from 'mathjs';
 const ThreeScene=(
@@ -65,6 +66,10 @@ group.add(mesh_ind1);
 =======
   class ThreeScene extends Component {
     
+=======
+  class ThreeScene extends Component {
+    
+>>>>>>> parent of c39bb9c... made nozzle dynamic
     componentDidMount() {
       const width = window.innerWidth;
       const height = window.innerHeight;
@@ -142,12 +147,20 @@ mesh_ind4=this.create_component(0.28,0.28,radius_inner_cone_bottom,radius_inner_
 
 var group = new THREE.Group();
 group.add( mesh_ind1 );
+<<<<<<< HEAD
+>>>>>>> parent of c39bb9c... made nozzle dynamic
+=======
 >>>>>>> parent of c39bb9c... made nozzle dynamic
 group.add( mesh_ind2 );
 group.add( mesh_ind3 );
 group.add( mesh_ind4 );
 group.translateX(1).rotateZ(0);
 this.scene.add(group);
+<<<<<<< HEAD
+=======
+
+   
+>>>>>>> parent of c39bb9c... made nozzle dynamic
 
    
 
@@ -164,9 +177,16 @@ return group2;
 
    
 
+
+
+   
+
   // this.scene.add(pointclod);
   this.start();
   
+<<<<<<< HEAD
+>>>>>>> parent of c39bb9c... made nozzle dynamic
+=======
 >>>>>>> parent of c39bb9c... made nozzle dynamic
 }
 
@@ -175,6 +195,7 @@ return group2;
     create_component=(outer_upper_rad, outer_lower_rad, inner_upper_rad,inner_lower_rad,length,translateX,translateY,translateZ,rotateX,rotateY,rotateZ)=>
     {
       //sphere
+<<<<<<< HEAD
 <<<<<<< HEAD
       let material =new THREE.MeshPhongMaterial({ color: '#0b7dba', emissive: 0x072534, side: THREE.DoubleSide });
 let cylinder_cone = new THREE.CylinderGeometry(outer_upper_rad,outer_lower_rad,length,100);
@@ -191,6 +212,8 @@ let subtractCSG = coneCSG.subtract( cylinderCSG );
 let result = fromCSG(subtractCSG); // converting CSG back into ThreeJS object
  let mesh_test= new THREE.Mesh(result,material);
 =======
+=======
+>>>>>>> parent of c39bb9c... made nozzle dynamic
 var cylinder_cone = new THREE.CylinderGeometry(outer_upper_rad,outer_lower_rad,length,100);
 var cylinderconeMesh = new THREE.Mesh( cylinder_cone, this.material );
 var coneCSG = toCSG( cylinderconeMesh ); // converting ThreeJS object to CSG
@@ -204,6 +227,9 @@ var cylinderCSG = toCSG( cylinderMesh ); // converting ThreeJS object to CSG
 var subtractCSG = coneCSG.subtract( cylinderCSG );
 var result = fromCSG(subtractCSG); // converting CSG back into ThreeJS object
  var mesh_test= new THREE.Mesh(result,this.material);
+<<<<<<< HEAD
+>>>>>>> parent of c39bb9c... made nozzle dynamic
+=======
 >>>>>>> parent of c39bb9c... made nozzle dynamic
  mesh_test.translateX(translateX).translateY(translateY).translateZ(translateZ).rotateX(rotateX).rotateY(rotateY).rotateZ(rotateZ);
 //result.geometry.computeVertexNormals();
@@ -214,7 +240,11 @@ return mesh_test;
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     const create_flange=(radius_outer,radius_inner,extrude_length,translateX,translateY,translateZ,rotateX,rotateY,rotateZ,hole_number1,bolt_hole_rad,bolt_size1)=>{
+=======
+    create_flange=(radius_outer,radius_inner,extrude_length,translateX,translateY,translateZ,rotateX,rotateY,rotateZ)=>{
+>>>>>>> parent of c39bb9c... made nozzle dynamic
 =======
     create_flange=(radius_outer,radius_inner,extrude_length,translateX,translateY,translateZ,rotateX,rotateY,rotateZ)=>{
 >>>>>>> parent of c39bb9c... made nozzle dynamic
@@ -225,6 +255,7 @@ return mesh_test;
         specular: 0xffffff,
         shininess: 1.0,
       });
+<<<<<<< HEAD
 <<<<<<< HEAD
       let material =new THREE.MeshPhongMaterial({ color: '#0b7dba', emissive: 0x072534, side: THREE.DoubleSide });
       let depth_flange3=0.1;
@@ -263,6 +294,8 @@ return mesh_test;
       // let holePath3 = new THREE.Path();
       // holePath3.moveTo( 0, 0 );
 =======
+=======
+>>>>>>> parent of c39bb9c... made nozzle dynamic
       var depth_flange3=0.1;
       var radius_hole3=0.05;
       var radius_central3=0.15;
@@ -277,6 +310,7 @@ return mesh_test;
       arcShape3.absarc( 0, 0, radius_outer, 0, Math.PI * 2, false );
       var holePath3 = new THREE.Path();
       holePath3.moveTo( 0, 0 );
+<<<<<<< HEAD
 >>>>>>> parent of c39bb9c... made nozzle dynamic
  
       holePath3.absarc( (radius_outer-0.2), radius_outer-0.25,radius_hole3, 0, Math.PI * 2, true );
@@ -288,11 +322,19 @@ return mesh_test;
       var holePath32 = new THREE.Path();
       holePath32.moveTo( 0, 0 );
 >>>>>>> parent of c39bb9c... made nozzle dynamic
+=======
+ 
+      holePath3.absarc( (radius_outer-0.2), radius_outer-0.25,radius_hole3, 0, Math.PI * 2, true );
+ 
+      var holePath32 = new THREE.Path();
+      holePath32.moveTo( 0, 0 );
+>>>>>>> parent of c39bb9c... made nozzle dynamic
       
       holePath32.absarc( radius_outer-0.2, 0.25-radius_outer,radius_hole3, 0, Math.PI * 2, true );
       arcShape3.holes.push(holePath32);
  
  
+<<<<<<< HEAD
 <<<<<<< HEAD
       // let holePath33 = new THREE.Path();
       // holePath33.moveTo( 0, 0 );
@@ -305,6 +347,25 @@ return mesh_test;
       // holePath35.moveTo( 0, 0 );
       // holePath35.absarc( -(radius_outer-0.2), radius_outer-0.25,radius_hole3, 0, Math.PI * 2, true );
       // arcShape3.holes.push(holePath35);
+=======
+      var holePath33 = new THREE.Path();
+      holePath33.moveTo( 0, 0 );
+      
+      holePath33.absarc( -(radius_outer-0.2), 0.25-radius_outer,radius_hole3, 0, Math.PI * 2, true );
+      arcShape3.holes.push(holePath33);
+ 
+      var holePath34 = new THREE.Path();
+      holePath34.moveTo( 0, 0 );
+      
+      holePath34.absarc( 0, 0,radius_inner, 0, Math.PI * 2, true );
+      arcShape3.holes.push(holePath34);
+ 
+      arcShape3.holes.push( holePath3 );
+      var holePath35 = new THREE.Path();
+      holePath35.moveTo( 0, 0 );
+      holePath35.absarc( -(radius_outer-0.2), radius_outer-0.25,radius_hole3, 0, Math.PI * 2, true );
+      arcShape3.holes.push(holePath35);
+>>>>>>> parent of c39bb9c... made nozzle dynamic
 
   let geometry_extrude3 = new THREE.ExtrudeGeometry( arcShape3, extrudeSettings3 );
  //geometry_extrude3.computeFaceNormals();
@@ -446,6 +507,7 @@ material2.dispose();
       this.stop();
       this.mount.removeChild(this.renderer.domElement);
     }
+<<<<<<< HEAD
   
     start = () => {
       if (!this.frameId) {
@@ -454,6 +516,23 @@ material2.dispose();
         this.renderer.render(this.scene, this.camera);
       }
     }
+  
+    stop = () => {
+      cancelAnimationFrame(this.frameId);
+    }
+  
+    animate = () => {
+      this.controls.update();
+=======
+  
+    start = () => {
+      if (!this.frameId) {
+        this.frameId = requestAnimationFrame(this.animate);
+        this.controls.update();
+        this.renderer.render(this.scene, this.camera);
+      }
+    }
+>>>>>>> parent of c39bb9c... made nozzle dynamic
   
     stop = () => {
       cancelAnimationFrame(this.frameId);
@@ -489,4 +568,33 @@ material2.dispose();
     }
   }
   
+<<<<<<< HEAD
+      this.renderScene();
+      this.frameId = window.requestAnimationFrame(this.animate);
+    }
+  
+    renderScene = () => {
+      this.renderer.render(this.scene, this.camera);
+    }
+  
+    render() {
+      return ( <
+        div style = {
+          {
+            width: '400px',
+            height: '400px'
+          }
+        }
+        ref = {
+          (mount) => {
+            this.mount = mount
+          }
+        }
+        />
+      );
+    }
+  }
+  
+=======
+>>>>>>> parent of c39bb9c... made nozzle dynamic
   export default ThreeScene;
