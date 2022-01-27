@@ -6,7 +6,7 @@
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-scripts": "2.1.5",
-    "three": "^0.101.1",
+    "three": "^0.137.0",
     "three-2-csg": "^1.0.2",
     "three-trackballcontrols": "0.0.7"
   },
